@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Temperature</title>
+</head>
+<body>
+<h1>Temperature</h1>
+
+<div>
+    <table>
+        <tr th:each ="temperatureCountry : ${countries.temperatures}">
+            <td th:utext="${temperatureCountry.country}">...</td>
+            <td>
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Température (°C)</th>
+                    </tr>
+                    <tr th:each ="temperature : ${temperatureCountry.temperatures}">
+                        <td th:utext="${temperature.date}">...</td>
+                        <td th:utext="${temperature.temperature}">...</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+
+</html>
