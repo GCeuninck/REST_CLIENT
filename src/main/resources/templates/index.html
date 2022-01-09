@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Temperature</title>
+</head>
+<body>
+<h1>Temperature</h1>
+
+<h2>Voir tous les pays <a th:href="@{/temperature}"> ici</a></h2>
+
+
+<form th:action="@{/temperature/search}" th:object="${temperatureForm}" method="POST">
+
+    <h2>Ou Choisissez un pays</h2>
+    <div>
+        <select th:field="*{country}">
+            <option th:value="France" th:text="France"></option>
+            <option th:value="England" th:text="Angleterre"></option>
+        </select>
+    </div>
+    <br/>
+    <input type="submit" value="Rechercher" />
+</form>
+
+</body>
+
+</html>
